@@ -9,9 +9,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 协议
+@protocol UIViewExtensionDelegate<NSObject>
+- (void)viewExtensionDelegate;
+@end
+
 /// Extension
 @interface UIView ()
-
+/// 属性
+@property (nonatomic, assign) CGFloat x;
+@property (nonatomic, weak) id<UIViewExtensionDelegate> delegate;
+/// 对象方法
+- (void)instanceMethod;
+/// 类方法
++ (void)classMethod;
 @end
 
 NS_ASSUME_NONNULL_END
