@@ -1,11 +1,11 @@
 //
-//  UIView+Extension.h
+//  Person+Extension.h
 //  CategoryDemo
 //
-//  Created by 曹素洋 on 2023/5/30.
+//  Created by 曹素洋 on 2023/5/31.
 //
 
-#import <UIKit/UIKit.h>
+#import "Person.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,11 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)viewExtensionDelegate;
 @end
 
-/// Extension
-@interface UIView ()
+@interface Person ()
 /// 属性
-@property (nonatomic, assign) CGFloat x;
-@property (nonatomic, weak) id<UIViewExtensionDelegate> delegate;
+@property (nonatomic, copy) NSString *property;
 /// 对象方法
 - (void)instanceMethod;
 /// 类方法

@@ -8,5 +8,11 @@
 #import "Father.h"
 
 @implementation Father
++ (void)load {
+    NSLog(@"Father +load");
+}
 
++ (void)initialize {
+    NSLog(@"Father +initialize");
+}
 @end

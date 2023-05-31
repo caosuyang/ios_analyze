@@ -10,6 +10,13 @@
 		310E26CE2A262EE8009A6119 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E26CD2A262EE8009A6119 /* Person.m */; };
 		310E26D12A262F06009A6119 /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E26D02A262F06009A6119 /* Father.m */; };
 		310E26D42A262F1E009A6119 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E26D32A262F1E009A6119 /* Son.m */; };
+		310E26D72A271F51009A6119 /* Person+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E26D62A271F51009A6119 /* Person+Category.m */; };
+		310E26E12A27221F009A6119 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E26E02A27221F009A6119 /* UIView+Frame.m */; };
+		310E26E72A2724AE009A6119 /* Father+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E26E62A2724AE009A6119 /* Father+Load.m */; };
+		310E26EA2A2724C2009A6119 /* Son+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E26E92A2724C2009A6119 /* Son+Load.m */; };
+		310E26ED2A2724F1009A6119 /* Son+Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E26EC2A2724F1009A6119 /* Son+Initialize.m */; };
+		310E26F02A272509009A6119 /* Father+Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E26EF2A272509009A6119 /* Father+Initialize.m */; };
+		310E26F42A2725A1009A6119 /* Son+Association.m in Sources */ = {isa = PBXBuildFile; fileRef = 310E26F32A2725A1009A6119 /* Son+Association.m */; };
 		318BC4962A25EDC4007D19BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318BC4952A25EDC4007D19BD /* AppDelegate.m */; };
 		318BC4992A25EDC4007D19BD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 318BC4982A25EDC4007D19BD /* SceneDelegate.m */; };
 		318BC49C2A25EDC4007D19BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318BC49B2A25EDC4007D19BD /* ViewController.m */; };
@@ -17,7 +24,6 @@
 		318BC4A12A25EDC7007D19BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318BC4A02A25EDC7007D19BD /* Assets.xcassets */; };
 		318BC4A42A25EDC7007D19BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318BC4A22A25EDC7007D19BD /* LaunchScreen.storyboard */; };
 		318BC4A72A25EDC7007D19BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 318BC4A62A25EDC7007D19BD /* main.m */; };
-		318BC4B42A25F8F3007D19BD /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 318BC4B32A25F8F3007D19BD /* UIView+Category.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +33,21 @@
 		310E26D02A262F06009A6119 /* Father.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Father.m; sourceTree = "<group>"; };
 		310E26D22A262F1D009A6119 /* Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
 		310E26D32A262F1E009A6119 /* Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
+		310E26D52A271F51009A6119 /* Person+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+Category.h"; sourceTree = "<group>"; };
+		310E26D62A271F51009A6119 /* Person+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+Category.m"; sourceTree = "<group>"; };
+		310E26D82A271F86009A6119 /* Person+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+Extension.h"; sourceTree = "<group>"; };
+		310E26DF2A27221F009A6119 /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		310E26E02A27221F009A6119 /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		310E26E52A2724AE009A6119 /* Father+Load.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Father+Load.h"; sourceTree = "<group>"; };
+		310E26E62A2724AE009A6119 /* Father+Load.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Father+Load.m"; sourceTree = "<group>"; };
+		310E26E82A2724C2009A6119 /* Son+Load.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Son+Load.h"; sourceTree = "<group>"; };
+		310E26E92A2724C2009A6119 /* Son+Load.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Son+Load.m"; sourceTree = "<group>"; };
+		310E26EB2A2724F1009A6119 /* Son+Initialize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Son+Initialize.h"; sourceTree = "<group>"; };
+		310E26EC2A2724F1009A6119 /* Son+Initialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Son+Initialize.m"; sourceTree = "<group>"; };
+		310E26EE2A272509009A6119 /* Father+Initialize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Father+Initialize.h"; sourceTree = "<group>"; };
+		310E26EF2A272509009A6119 /* Father+Initialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Father+Initialize.m"; sourceTree = "<group>"; };
+		310E26F22A2725A1009A6119 /* Son+Association.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Son+Association.h"; sourceTree = "<group>"; };
+		310E26F32A2725A1009A6119 /* Son+Association.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Son+Association.m"; sourceTree = "<group>"; };
 		318BC4912A25EDC4007D19BD /* CategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		318BC4942A25EDC4007D19BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		318BC4952A25EDC4007D19BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,9 +60,6 @@
 		318BC4A32A25EDC7007D19BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		318BC4A52A25EDC7007D19BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		318BC4A62A25EDC7007D19BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		318BC4B12A25F8DC007D19BD /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		318BC4B22A25F8F3007D19BD /* UIView+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
-		318BC4B32A25F8F3007D19BD /* UIView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +73,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		310E26D92A2721AD009A6119 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				310E26D52A271F51009A6119 /* Person+Category.h */,
+				310E26D62A271F51009A6119 /* Person+Category.m */,
+				310E26DF2A27221F009A6119 /* UIView+Frame.h */,
+				310E26E02A27221F009A6119 /* UIView+Frame.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		310E26DA2A2721BD009A6119 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				310E26D82A271F86009A6119 /* Person+Extension.h */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		310E26DB2A2721CA009A6119 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				310E26CC2A262EE8009A6119 /* Person.h */,
+				310E26CD2A262EE8009A6119 /* Person.m */,
+				310E26CF2A262F06009A6119 /* Father.h */,
+				310E26D02A262F06009A6119 /* Father.m */,
+				310E26D22A262F1D009A6119 /* Son.h */,
+				310E26D32A262F1E009A6119 /* Son.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		310E26E32A272430009A6119 /* load */ = {
+			isa = PBXGroup;
+			children = (
+				310E26E52A2724AE009A6119 /* Father+Load.h */,
+				310E26E62A2724AE009A6119 /* Father+Load.m */,
+				310E26E82A2724C2009A6119 /* Son+Load.h */,
+				310E26E92A2724C2009A6119 /* Son+Load.m */,
+			);
+			path = load;
+			sourceTree = "<group>";
+		};
+		310E26E42A27243B009A6119 /* initialize */ = {
+			isa = PBXGroup;
+			children = (
+				310E26EE2A272509009A6119 /* Father+Initialize.h */,
+				310E26EF2A272509009A6119 /* Father+Initialize.m */,
+				310E26EB2A2724F1009A6119 /* Son+Initialize.h */,
+				310E26EC2A2724F1009A6119 /* Son+Initialize.m */,
+			);
+			path = initialize;
+			sourceTree = "<group>";
+		};
+		310E26F12A272589009A6119 /* Association */ = {
+			isa = PBXGroup;
+			children = (
+				310E26F22A2725A1009A6119 /* Son+Association.h */,
+				310E26F32A2725A1009A6119 /* Son+Association.m */,
+			);
+			path = Association;
+			sourceTree = "<group>";
+		};
 		318BC4882A25EDC4007D19BD = {
 			isa = PBXGroup;
 			children = (
@@ -74,21 +155,18 @@
 		318BC4932A25EDC4007D19BD /* CategoryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				310E26F12A272589009A6119 /* Association */,
+				310E26E42A27243B009A6119 /* initialize */,
+				310E26E32A272430009A6119 /* load */,
+				310E26DB2A2721CA009A6119 /* Class */,
+				310E26DA2A2721BD009A6119 /* Extension */,
+				310E26D92A2721AD009A6119 /* Category */,
 				318BC4942A25EDC4007D19BD /* AppDelegate.h */,
 				318BC4952A25EDC4007D19BD /* AppDelegate.m */,
 				318BC4972A25EDC4007D19BD /* SceneDelegate.h */,
 				318BC4982A25EDC4007D19BD /* SceneDelegate.m */,
 				318BC49A2A25EDC4007D19BD /* ViewController.h */,
 				318BC49B2A25EDC4007D19BD /* ViewController.m */,
-				318BC4B12A25F8DC007D19BD /* UIView+Extension.h */,
-				318BC4B22A25F8F3007D19BD /* UIView+Category.h */,
-				318BC4B32A25F8F3007D19BD /* UIView+Category.m */,
-				310E26CC2A262EE8009A6119 /* Person.h */,
-				310E26CD2A262EE8009A6119 /* Person.m */,
-				310E26CF2A262F06009A6119 /* Father.h */,
-				310E26D02A262F06009A6119 /* Father.m */,
-				310E26D22A262F1D009A6119 /* Son.h */,
-				310E26D32A262F1E009A6119 /* Son.m */,
 				318BC49D2A25EDC4007D19BD /* Main.storyboard */,
 				318BC4A02A25EDC7007D19BD /* Assets.xcassets */,
 				318BC4A22A25EDC7007D19BD /* LaunchScreen.storyboard */,
@@ -169,13 +247,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				310E26D42A262F1E009A6119 /* Son.m in Sources */,
+				310E26E72A2724AE009A6119 /* Father+Load.m in Sources */,
 				310E26CE2A262EE8009A6119 /* Person.m in Sources */,
 				318BC49C2A25EDC4007D19BD /* ViewController.m in Sources */,
+				310E26ED2A2724F1009A6119 /* Son+Initialize.m in Sources */,
+				310E26E12A27221F009A6119 /* UIView+Frame.m in Sources */,
+				310E26F42A2725A1009A6119 /* Son+Association.m in Sources */,
 				318BC4962A25EDC4007D19BD /* AppDelegate.m in Sources */,
 				318BC4A72A25EDC7007D19BD /* main.m in Sources */,
-				318BC4B42A25F8F3007D19BD /* UIView+Category.m in Sources */,
+				310E26D72A271F51009A6119 /* Person+Category.m in Sources */,
+				310E26EA2A2724C2009A6119 /* Son+Load.m in Sources */,
 				318BC4992A25EDC4007D19BD /* SceneDelegate.m in Sources */,
 				310E26D12A262F06009A6119 /* Father.m in Sources */,
+				310E26F02A272509009A6119 /* Father+Initialize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
