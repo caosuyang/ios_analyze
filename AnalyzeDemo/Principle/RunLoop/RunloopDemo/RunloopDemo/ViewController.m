@@ -26,7 +26,9 @@
     
 //    [self fixTimerStop];
     
-    [self monitorKaton];
+//    [self monitorKaton];
+    
+    [self gcdTimer];
 }
 
 /// 控制线程生命周期（线程保活）
@@ -123,5 +125,23 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
 /// 性能优化
 - (void)fixKaton {
     // 参考：AsyncDisplayKit
+}
+
+/// NSTimer依赖于RunLoop，如果RunLoop的任务过于繁重，可能会导致NSTimer不准时。而GCD的定时器会更加准时
+- (void)gcdTimer {
+    // 1. 不耗时ui操作放主队列
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    // 2. 耗时操作放全局队列
+    dispatch_queue_t queue2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    // 3. 创建一个定时器
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue2);
+    // 4. 设置时间
+    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), (int64_t)(2.0 * NSEC_PER_SEC), 0);
+    // 5. 设置回调
+    dispatch_source_set_event_handler(timer, ^{
+        NSLog(@"dispatch_source_set_event_handler 回调");
+    });
+    // 6. 启动定时器
+    dispatch_resume(timer);
 }
 @end

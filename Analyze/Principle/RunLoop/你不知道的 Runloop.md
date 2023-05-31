@@ -262,9 +262,44 @@ struct category_t {
 4. Exit(即将退出Loop) 时调用 _objc_autoreleasePoolPop() 来释放自动释放池。这个 Observer 的 order 是 2147483647，优先级最低，保证其释放池子发生在其他所有回调之后。
 5. 在主线程执行的代码，通常是写在诸如事件回调、Timer回调内的。这些回调会被 RunLoop 创建好的 AutoreleasePool 环绕着，所以不会出现内存泄漏，开发者也不必显示创建 Pool 了。
 
+## 定时器
+1. NSTimer 其实就是 CFRunLoopTimerRef，他们之间是 toll-free bridged 的。
+2. 一个 NSTimer 注册到 RunLoop 后，RunLoop 会为其重复的时间点注册好事件。例如 10:00, 10:10, 10:20 这几个时间点。
+3. RunLoop为了节省资源，并不会在非常准确的时间点回调这个Timer。Timer 有个属性叫做 Tolerance (宽容度)，标示了当时间点到后，容许有多少最大误差。
+4. 如果某个时间点被错过了，例如执行了一个很长的任务，则那个时间点的回调也会跳过去，不会延后执行。就比如等公交，如果 10:10 时我忙着玩手机错过了那个点的公交，那我只能等 10:20 这一趟了。
+5. CADisplayLink 是一个和屏幕刷新率一致的定时器（但实际实现原理更复杂，和 NSTimer 并不一样，其内部实际是操作了一个 Source）。
+6. 如果在两次屏幕刷新之间执行了一个长任务，那其中就会有一帧被跳过去（和 NSTimer 相似），造成界面卡顿的感觉。
+7. 在快速滑动TableView时，即使一帧的卡顿也会让用户有所察觉。Facebook 开源的 AsyncDisplayLink 就是为了解决界面卡顿的问题，其内部也用到了 RunLoop。
 ## 监控应用卡顿
 
 ## 性能优化
+
+## 遇到的问题
+
+1. 解决 NSTimer 依赖于 RunLoop，任务过于繁重可能会导致 NSTimer 不准时的问题
+2. 原因：如果执行了一个很长的任务，则 NSTimer 那个时间点的回调也会跳过去，不会延后执行
+3. 如何解决：
+4. NSTimer依赖于RunLoop，如果RunLoop的任务过于繁重，可能会导致NSTimer不准时。而GCD的定时器会更加准时
+
+```objective-c
+/// NSTimer依赖于RunLoop，如果RunLoop的任务过于繁重，可能会导致NSTimer不准时。而GCD的定时器会更加准时
+- (void)gcdTimer {
+    // 1. 不耗时ui操作放主队列
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    // 2. 耗时操作放全局队列
+    dispatch_queue_t queue2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    // 3. 创建一个定时器
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue2);
+    // 4. 设置时间
+    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), (int64_t)(2.0 * NSEC_PER_SEC), 0);
+    // 5. 设置回调
+    dispatch_source_set_event_handler(timer, ^{
+        NSLog(@"dispatch_source_set_event_handler 回调");
+    });
+    // 6. 启动定时器
+    dispatch_resume(timer);
+}
+```
 
 ## 参考
 
