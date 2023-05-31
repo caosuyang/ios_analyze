@@ -156,8 +156,11 @@ objc_msgSend(cls, SEL_initialize) // 6. objc_msgSend
 ## load、initialize方法的区别什么？它们在category中的调用的顺序？以及出现继承时他们之间的调用过程？
 
 1. +initialize 和 +load 的很大区别是，+initialize 是通过 objc_msgSend 进行调用的
-2. 调用分类的 +load，按照编译先后顺序调用（先编译，先调用）。 调用分类的 +initialize，按照编译先后顺序调用（先编译，先调用）。
-3. 先调用类的 +load，按照编译先后顺序调用（先编译，先调用），调用子类的 +load 之前会先调用父类的 +load。先调用父类的 +initialize，再调用子类的 +initialize (先初始化父类，再初始化子类，每个类只会初始化1次)
+2. +load 调用顺序：先调用类的 +load
+	1. 按照编译先后顺序调用（先编译，先调用）
+	2. 调用子类的 +load 之前会先调用父类的 +load
+3. 再调用分类的 +load，按照编译先后顺序调用（先编译，先调用）
+4. +initialize 调用顺序：先调用父类的 +initialize，再调用子类的 +initialize (先初始化父类，再初始化子类，每个类只会初始化1次)
 
 ## Category能否添加成员变量？如果可以，如何给Category添加成员变量？
 
