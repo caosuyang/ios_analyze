@@ -12,8 +12,19 @@ Latest：
 
 1. [你不知道的 Category](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Principle/Category/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20Category.md)
 2. [你不知道的 Runloop](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Principle/RunLoop/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20Runloop.md)
+3. [你不知道的 Thread]()
+4. [你不知道的 Memory]()
 
-## 目录
+## APP 性能监控优化
+
+5. [你不知道的 启动速度优化]()
+6. [你不知道的 内存优化]()
+7. [你不知道的 包体积优化]()
+8. [你不知道的 卡顿优化]()
+9. [你不知道的 Crash 堆栈符号化]()
+10. [你不知道的 ⻚⾯和事件埋点]()
+
+## Project
 
 Latest：
 
