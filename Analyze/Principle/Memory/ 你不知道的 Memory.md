@@ -126,6 +126,7 @@ objc_destructInstance、free
     - weak 此特质表明该属性定义了一种“非拥有关系” (nonowning relationship)。为这种属性设置新值时，设置方法既不保留新值，也不释放旧值。此特质同assign类似， 然而在属性所指的对象遭到摧毁时，属性值也会清空(nil out)。 而 assign 的- “设置方法”只会执行针对“纯量类型” (scalar type，例如 CGFloat 或 NSlnteger 等)的简单赋值操作。
     - assign 可以用非 OC 对象,而 weak 必须用于 OC 对象
 5. 实现原理：弱引用表，hashtable管理，todo？
+6. 弱引用表也是一张哈希表的结构，其内部包含了每个对象对应的弱引用表 weak_entry_t，而 weak_entry_t 是一个结构体数组，其中包含的则是每一个对象弱引用的对象所对应的弱引用指针。
 
 ## autorelease对象在什么时机会被调用release
 
