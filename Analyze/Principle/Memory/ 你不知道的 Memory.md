@@ -37,6 +37,28 @@ extern void _objc_autoreleasePoolPrint(void);
 
 ## copy和mutableCopy
 
+1. NSString copy -> NSString => 浅拷贝
+2. NSMutableString copy -> NSString => 深拷贝
+3. NSArray copy -> NSArray => 浅拷贝
+4. NSMutableArray copy -> NSArray => 深拷贝
+5. NSDictionary copy -> NSDictionary => 浅拷贝
+6. NSMutableDictionary copy -> NSDictionary => 深拷贝
+
+1. NSString mutableCopy -> NSMutableString => 深拷贝
+2. NSMutableString mutableCopy -> NSMutableString => 深拷贝
+3. NSArray mutableCopy -> NSMutableArray => 深拷贝
+4. NSMutableArray mutableCopy -> NSMutableArray => 深拷贝
+5. NSDictionary mutableCopy -> NSMutableDictionary => 深拷贝
+6. NSMutableDictionary mutableCopy -> NSMutableDictionary => 深拷贝
+
+## 深拷贝、浅拷贝区别
+
+1. 浅拷贝只是对指针的拷贝，拷贝后两个指针指向同一个内存空间，深拷贝不但对指针进行拷贝，而且对指针指向的内容进行拷贝，经深拷贝后的指针是指向两个不同地址的指针。
+2. 当对象中存在指针成员时，除了在复制对象时需要考虑自定义拷贝构造函数，还应该考虑以下两种情形：
+3. 函数的参数为对象时，实参传递给形参的实际上是实参的一个拷贝对象，系统自动通过拷贝构造函数实现；
+4. 当函数的返回值为一个对象时，该对象实际上是函数内对象的一个拷贝，用于返回函数调用处。
+5. copy方法:如果是非可扩展类对象，则是浅拷贝。如果是可扩展类对象，则是深拷贝。
+6. mutableCopy方法:无论是可扩展类对象还是不可扩展类对象，都是深拷贝。
 
 ## 引用计数的存储
 
@@ -86,13 +108,27 @@ objc_destructInstance、free
 
 ## 代理对象（NSProxy）机制原理
 
+1. weak 关键字修饰 target 属性
+2. runtime进行消息转发，转发给self的selctor方法
+
 ## ARC 都帮我们做了什么？
 
 - LLVM + Runtime
 
 ## weak指针的实现原理
 
+1. weak 表示指向但不拥有该对象。其修饰的对象引用计数不会增加。无需手动设置，该对象会自行在内存中销毁。
+2. weak 一般用来修饰对象，assign 一般用来修饰基本数据类型。原因是 assign 修饰的对象被释放后，指针的地址依然存在，造成野指针，在堆上容易造成崩溃。而栈上的内存系统会自动处理，不会造成野指针。
+3. 什么情况使用 weak 关键字？
+    - 在 ARC 中,在有可能出现循环引用的时候,往往要通过让其中一端使用 weak 来解决,比如: delegate 代理属性
+    - 自身已经对它进行一次强引用,没有必要再强引用一次,此时也会使用 weak,自定义 IBOutlet 控件属性一般也使用 weak；当然，也可以使用strong。
+4. 不同点：
+    - weak 此特质表明该属性定义了一种“非拥有关系” (nonowning relationship)。为这种属性设置新值时，设置方法既不保留新值，也不释放旧值。此特质同assign类似， 然而在属性所指的对象遭到摧毁时，属性值也会清空(nil out)。 而 assign 的- “设置方法”只会执行针对“纯量类型” (scalar type，例如 CGFloat 或 NSlnteger 等)的简单赋值操作。
+    - assign 可以用非 OC 对象,而 weak 必须用于 OC 对象
+5. 实现原理：弱引用表，hashtable管理，todo？
+
 ## autorelease对象在什么时机会被调用release
+
 
 ## 方法里有局部对象， 出了方法后会立即释放吗
 
