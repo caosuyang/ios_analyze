@@ -130,12 +130,51 @@ objc_destructInstance、free
 
 ## autorelease对象在什么时机会被调用release
 
+1. 用了autorelease的对象最终都是通过AutoreleasePoolPage对象来管理的
+2. AutoreleasePoolPage对象，调用pop方法时传入一个POOL_BOUNDARY的内存地址，会从最后一个入栈的对象开始发送release消息，直到遇到这个POOL_BOUNDARY
+
 ## 方法里有局部对象， 出了方法后会立即释放吗
 
-## 内存如何优化？
+1. 分情况
+2. 如果方法被 AutoreleasePool 管理着，那么出了方法后会调用 autorelease 方法，加入 AutoreleasePool，延迟释放
+3. 如果方法没被 AutoreleasePool 管理着，那么出了方法后，局部对象不在被指针引用，会调用 release 方法，这时引用计数减至0，立即释放内存
 
-## 如何检查内存问题，分别两种，一种是内存泄漏，一种是内存溢出
+## autorelease 和 release 方法区别
 
-## 如何使用 instrument 检查内存
+1. autorelease 和 release 是 Objective-C 中用于管理对象的内存的两个重要方法。它们的主要区别在于它们的行为以及何时被调用。
+2. autorelease 方法
+    - autorelease 方法将对象添加到对象队列中，以便在应用程序释放对象时自动释放它们。
+    - autorelease 方法不会在对象队列中等待释放，而是立即返回。
+    - autorelease 方法通常在创建对象后将其添加到对象队列中，以便在将来释放。
+    - autorelease 方法可用于延迟对象释放，例如在循环中创建一个对象并在循环结束后释放它们。
+3. release 方法
+    - release 方法将对象从对象队列中移除，并释放对象的内存。
+    - release 方法在对象队列中没有对象时立即被调用。
+    - release 方法不能用于延迟对象释放，因为它们在对象队列中没有对象时立即被调用。
+    - release 方法是释放对象的唯一方法，因此如果您需要释放对象，请使用 release 方法。
+4. 在 Objective-C 中，autorelease 和 release 方法都是用于管理对象的内存的常用方法。autorelease 方法将对象添加到对象队列中，以便在应用程序释放对象时自动释放它们，而 release 方法将对象从对象队列中移除并释放它们的内存。
 
-## 如何线下和线上两个方向监控内存
+## arc机制什么场景分别调用 autorelease 和 release
+
+1. 字面量创建的直接存储在常量区
+2. alloc出来的存储在堆区并且作用域结束前直接插入release（符合NSTagged Pointer的会直接分配在常量区，类型是NSTaggedPointer_接类型名，标识指针和对象存储在一起）
+3. 通过stringWithFormat工厂方法创建的对象则在其后插入autorelease，这是因为工厂方法里面通过alloc分配堆内存，到返回出来以后其作用域已经结束，所以只能延迟释放了，否则没有办法返回非空对象（符合NSTagged Pointer的会直接分配在常量区，类型是NSTaggedPointer_接类型名，标识指针和对象存储在一起）
+
+## 小结
+
+1. arc机制
+2. autorelease 和 release
+3. copy、strong 等关键字
+4. copy和mutableCopy方法
+5. autoreleasePool
+6. 引用计数
+
+## 内存方向的性能优化
+
+### 内存如何优化？
+
+### 如何检查内存问题，分别两种，一种是内存泄漏，一种是内存溢出
+
+### 如何使用 instrument 检查内存
+
+### 如何线下和线上两个方向监控内存
