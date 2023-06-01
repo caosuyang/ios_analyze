@@ -17,10 +17,10 @@ Latest：
 
 ## APP 性能监控优化
 
-5. [你不知道的 启动速度优化]()
-6. [你不知道的 内存优化]()
-7. [你不知道的 包体积优化]()
-8. [你不知道的 卡顿优化]()
+5. [你不知道的 启动速度优化](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20%E5%90%AF%E5%8A%A8%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96.md)
+6. [你不知道的 内存优化](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96.md)
+7. [你不知道的 包体积优化](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20%E5%8C%85%E4%BD%93%E7%A7%AF%E4%BC%98%E5%8C%96.md)
+8. [你不知道的 卡顿优化](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96.md)
 9. [你不知道的 Crash 堆栈符号化]()
 10. [你不知道的 ⻚⾯和事件埋点]()
 11. [你不知道的 耗电优化]()
