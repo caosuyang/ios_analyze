@@ -21,9 +21,16 @@ Latest：
 6. [你不知道的 内存优化](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96.md)
 7. [你不知道的 包体积优化](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20%E5%8C%85%E4%BD%93%E7%A7%AF%E4%BC%98%E5%8C%96.md)
 8. [你不知道的 卡顿优化](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96.md)
-9. [你不知道的 Crash 堆栈符号化]()
-10. [你不知道的 ⻚⾯和事件埋点]()
-11. [你不知道的 耗电优化]()
+9. [你不知道的 Crash 堆栈符号化](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20Crash%20%E5%A0%86%E6%A0%88%E7%AC%A6%E5%8F%B7%E5%8C%96.md)
+10. [你不知道的 ⻚⾯和事件埋点](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20%E2%BB%9A%E2%BE%AF%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%9F%8B%E7%82%B9.md)
+11. [你不知道的 耗电优化](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20%E8%80%97%E7%94%B5%E4%BC%98%E5%8C%96.md)
+12. [你不知道的 崩溃优化](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/Performance/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20%E5%B4%A9%E6%BA%83%E4%BC%98%E5%8C%96.md)
+
+## 设计模式
+
+## 主流架构
+
+## 框架源码
 
 ## Project
 
