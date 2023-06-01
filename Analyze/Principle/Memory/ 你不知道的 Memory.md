@@ -129,7 +129,6 @@ objc_destructInstance、free
 
 ## autorelease对象在什么时机会被调用release
 
-
 ## 方法里有局部对象， 出了方法后会立即释放吗
 
 ## 内存如何优化？
