@@ -8,13 +8,15 @@
 
 ## 性能优化-内存问题
 
-1. [性能优化-内存问题]()
-2. [性能优化-内存泄露]()
-3. [性能优化-内存溢出]()
-4. [性能优化-EXC_BAD_ACCESS]()
-5. [性能优化-内存导致崩溃]()
+1. [性能优化-内存问题](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/performance-memory-problems.md)
+2. [性能优化-内存泄露](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/performance-memory-leak.md)
+3. [性能优化-内存溢出](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/performance-memory-overflow.md)
+4. [性能优化-EXC_BAD_ACCESS](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/performance-exc-bad-access.md)
+5. [性能优化-内存导致崩溃](https://github.com/caosuyang/ios_analyze/blob/main/Analyze/performance-memory-crash.md)
 
 ## 性能优化-卡顿
+
+1. [性能优化-卡顿]()
 
 ## 性能优化-多线程
 
